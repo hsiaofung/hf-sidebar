@@ -1,0 +1,33 @@
+.sidebar {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 300ms ease-out;
+}
+.sidebar-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.sidebar-show {
+  opacity: 1;
+}
+.sidebar-content {
+  position: absolute;
+  width: 25vw;
+  height: 100vh;
+  background-color: white;
+  transition: all 300ms ease-out;
+}
+.sidebar .sidebar-content-right-hidden {
+  right: -25vw;
+}
+.sidebar .sidebar-content-right-show {
+  right: 0;
+}
+.sidebar .sidebar-content-left-hidden {
+  left: -25vw;
+}
+.sidebar .sidebar-content-left-show {
+  left: 0;
+}
