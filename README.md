@@ -1,68 +1,105 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## install
 
-## Available Scripts
+yarn add hf-sidebar
 
-In the project directory, you can run:
+## component
 
-### `yarn start`
+```javascript
+<Sidebar>
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## feature
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- RWD
+- 可設定左側欄或右側欄。
 
-### `yarn test`
+## API
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- show : bool, 顯示側邊欄
+- close: func, 關閉側邊欄函數。
+- title: 側邊的 title。
 
-### `yarn build`
+## Demo
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Sidebar from "./Sidebar";
+import "./style.css";
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+class App extends React.Component {
+  state = {
+    moveIn: false,
+    showLightbox: false
+  };
+  click = () => {
+    this.setState({
+      moveIn: true
+    });
+  };
+  clickShowLightbox = () => {
+    this.setState({
+      showLightbox: true
+    });
+  };
+  moveOut = () => {
+    this.setState({
+      moveIn: false
+    });
+  };
+  closeLightbox = () => {
+    this.setState({
+      showLightbox: false
+    });
+  };
+  get title() {
+    return (
+      <>
+        <span className="icon-block icon icon-cart"></span>我的購物車
+      </>
+    );
+  }
+  get emptyCart() {
+    return (
+      <div className="empty-cart">
+        <div className="group-empty">
+          <p className="row-icon">
+            <span className="icon icon-cart"></span>
+          </p>
+          <p className="row1">一切還好嗎?</p>
+          <p className="row2">你的購物袋是空的。</p>
+        </div>
+        <div className="row-button">
+          <button>了解最新商品</button>
+        </div>
+      </div>
+    );
+  }
+  render() {
+    return (
+      <div className="App">
+        <div style={{ borderBottom: "1px solid grey" }}>
+          <button onClick={this.click}>open right</button>
+        </div>
+        <Sidebar
+          show={this.state.moveIn}
+          close={this.moveOut}
+          title={this.title}
+        >
+          {this.emptyCart}
+        </Sidebar>
+        <div
+          style={{ border: "1px solid red", width: "480px", padding: "40px" }}
+        >
+          AAAAAA
+        </div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        <button>KKKK</button>
+      </div>
+    );
+  }
+}
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+export default App;
+```
