@@ -1,6 +1,6 @@
 {
   "name": "hf-sidebar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "dependencies": {
     "react": "^16.12.0",
@@ -14,7 +14,8 @@
     "eject": "react-scripts eject",
     "transpile": "babel src/Sidebar.js --out-file dist/index.js",
     "copy-css": "babel src/css --out-dir dist/css --copy-files",
-    "prepublishOnly": "npm run transpile & npm run copy-css"
+    "copy-img": "babel src/img --out-dir dist/img --copy-files",
+    "prepublishOnly": "npm run transpile & npm run copy-css & npm run copy-img"
   },
   "eslintConfig": {
     "extends": "react-app"
