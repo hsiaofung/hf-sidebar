@@ -21,8 +21,8 @@ yarn add hf-sidebar
 
 ## CSS
 
-.sidebar-close-btn background : 可以更改 close 的 icon 圖片。
-.sidebar-close-btn left : 可以調整 close icon 的位置。
+.sidebar-close-btn background : 可以更改 close 的 icon 圖片。<br>
+.sidebar-close-btn left : 可以調整 close icon 的位置。<br>
 .sidebar .sidebar-content .content-header .title: 可以更改標題的 style。
 
 ## Demo
