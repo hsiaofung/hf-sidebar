@@ -17,7 +17,8 @@ yarn add hf-sidebar
 
 - show : bool, 顯示側邊欄
 - close: func, 關閉側邊欄函數。
-- title: 側邊的 title。
+- title: 側邊欄的 title。
+- moveIn: "left|right"，左側欄或右側欄。 
 
 ## CSS
 
