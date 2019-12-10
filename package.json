@@ -1,6 +1,6 @@
 {
   "name": "hf-sidebar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.js",
   "dependencies": {
     "react": "^16.12.0",
