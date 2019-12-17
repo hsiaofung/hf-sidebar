@@ -70,7 +70,9 @@ button {
   /*for iOS removimg the highlight*/
   -webkit-tap-highlight-color: transparent;
 }
-
+.sidebar-close-btn:hover {
+  opacity: 0.75;
+}
 /*側欄的header的title*/
 .sidebar .sidebar-content .content-header .title {
   text-align: center;
